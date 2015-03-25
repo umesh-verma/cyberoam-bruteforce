@@ -57,13 +57,3 @@ if lgt == 'yes':
 
 
 
-
-#dataToSend = urllib.urlencode({'mode': '191','isAccessDenied': '', 'url': '', 'username': userid, 'password': password, 'saveinfo': '', })
-#postRequest = urllib.urlopen("https://192.168.100.1:8090/httpclient.html", dataToSend)
-#responseData = postRequest.read() 
-#print responseData
-
-
-
-
-

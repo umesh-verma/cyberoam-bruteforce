@@ -1,7 +1,5 @@
 __author__ = 'Xplore'
-
 # Cyberaom brute force Script
-
 
 import urllib
 import time
