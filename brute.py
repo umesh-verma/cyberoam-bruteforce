@@ -8,13 +8,7 @@ import datetime
 import urllib2
 import xml.dom.minidom as XML
 userid = raw_input("enter user id:")
-test=[]
-range_st=int(raw_input("Enter the starting number:"))
-range_ed=int(raw_input("Enter the last number:"))
-
-for i in range(range_st,range_ed+1):
-              test.append('ft$b'+str(i))
-        
+test=[]        
 print len(test)
 def sendLoginRequest(username, password):
     url = 'https://192.168.100.1:8090/httpclient.html'
