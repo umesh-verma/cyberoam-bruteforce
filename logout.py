@@ -8,6 +8,8 @@ import urllib2
 import xml.dom.minidom as XML
 
 username = raw_input("enter user id :")
+
+
 def sendLogoutRequest(username):
     url = 'https://192.168.100.1:8090/httpclient.html'
     post_data = 'mode=193' + '&username=' + username
@@ -17,3 +19,4 @@ def sendLogoutRequest(username):
     print 'logout.'
 
 sendLogoutRequest(username)
+
