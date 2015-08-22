@@ -1,4 +1,4 @@
-__author__ = 'Xplore'
+__author__ = 'Saumyakanta Sahoo'
 # Cyberaom brute force Script
 
 
@@ -17,7 +17,7 @@ def countdown(num):
         sys.stdout.flush()
         
 print 'MADE BY - "XPLORE" '
-countdown(5)
+countdown(3)
 userid = raw_input("enter user id:")
 test=[]
 range_st=int(raw_input("Enter the starting number:"))
