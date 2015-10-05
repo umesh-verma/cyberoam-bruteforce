@@ -15,7 +15,7 @@ def countdown(num):
         sys.stdout.flush()
         
 print 'MADE BY - "XPLORE" '
-countdown(5)        
+
 
 username = raw_input("enter user id :")
 

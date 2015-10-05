@@ -4,16 +4,16 @@ import datetime
 import urllib2
 import sys
 import xml.dom.minidom as XML
-
+'''
 #CountDown And Credits
 def countdown(num):
     for i in xrange(num,0,-1):
         time.sleep(1)
         sys.stdout.write(str(i%10)+'\r')
         sys.stdout.flush()
-        
+'''        
 print 'MADE BY - "XPLORE" '
-countdown(5)        
+
 
 userid = raw_input("enter user id:")
 passd = raw_input("enter pass:")
